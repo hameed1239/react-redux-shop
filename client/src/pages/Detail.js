@@ -4,7 +4,6 @@ import { useQuery } from '@apollo/react-hooks';
 
 import { QUERY_PRODUCTS } from "../utils/queries";
 import spinner from '../assets/spinner.gif';
-import { useStoreContext } from "../utils/GlobalState";
 import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY, UPDATE_PRODUCTS, ADD_TO_CART } from "../utils/actions"
 import Cart from '../components/Cart';
 import { idbPromise } from "../utils/helpers";
@@ -24,7 +23,6 @@ function Detail() {
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
 
-  // const { products, cart } = state;
 
   useEffect(() => {
     if (products.length) {

@@ -2,7 +2,7 @@ require('dotenv').config();
 const { AuthenticationError } = require('apollo-server-express');
 const { User, Product, Category, Order } = require('../models');
 const { signToken } = require('../utils/auth');
-const stripe = require('stripe')(process.env.STRIPE_KEY);
+const stripe = require('stripe')("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
 
 const resolvers = {
   Query: {
@@ -67,14 +67,12 @@ const resolvers = {
           description: products[i].description,
           images: [`${url}/images/${products[i].image}`]
         });
-
         // generate price id using the product id
         const price = await stripe.prices.create({
           product: product.id,
           unit_amount: products[i].price * 100,
           currency: 'usd',
         });
-
         // add price id to the line items array
         line_items.push({
           price: price.id,

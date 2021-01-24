@@ -46,7 +46,7 @@ You can contribute to this project by creating an issue on this repository
 
 ## Test
 
-Link to app: [Google Books API](https://redux-react-shop-hameed1239.herokuapp.com/)
+Link to app: [React redux Store](https://redux-react-shop-hameed1239.herokuapp.com/)
 
 Screenshots:
 ![Screenshot](Capture.PNG)
